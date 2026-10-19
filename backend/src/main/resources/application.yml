@@ -1,0 +1,52 @@
+#server:
+#  port: ${SERVER_PORT:8080}
+#  error:
+#    include-message: never
+#spring:
+#  datasource:
+#    url: ${DB_URL:jdbc:mysql://localhost:3306/kaamfolio?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+#    username: ${DB_USERNAME:root}
+#    password: ${DB_PASSWORD}
+#  servlet:
+#    multipart:
+#      max-file-size: 25MB
+#      max-request-size: 26MB
+#  jackson:
+#    deserialization:
+#      fail-on-unknown-properties: true
+#app:
+#  username: ${APP_USERNAME:owner}
+#  password: ${APP_PASSWORD}
+#  upload-dir: ${UPLOAD_DIR:./uploads}
+#  allowed-origins: ${ALLOWED_ORIGINS:http://localhost:8081,http://localhost:19006}
+
+
+server:
+  port: ${SERVER_PORT:8080}
+  error:
+    include-message: never
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/kaamfolio?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${DB_USERNAME:root}
+   password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  servlet:
+    multipart:
+      max-file-size: 25MB
+      max-request-size: 26MB
+
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+
+app:
+  username: ${APP_USERNAME:owner}
+  password: ${APP_PASSWORD}
+  upload-dir: ${UPLOAD_DIR:./uploads}
+  allowed-origins: ${ALLOWED_ORIGINS:http://localhost:8081,http://localhost:19006}
